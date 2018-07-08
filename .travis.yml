@@ -1,0 +1,7 @@
+dist: trusty
+
+install:
+  - git clone https://github.com/BR0kEN-/tests-runner.git
+
+script:
+  - ./tests-runner/runner.sh ./tests/

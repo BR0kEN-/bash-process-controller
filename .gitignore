@@ -1,0 +1,14 @@
+/*
+.*
+
+!.git*
+!.travis.yml
+
+!LICENSE
+!README.md
+
+!main.sh
+!process.sh
+!tasks-layout.sh
+
+!tests/

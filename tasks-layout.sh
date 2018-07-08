@@ -13,15 +13,20 @@ set +e
 # - PROCESS_clean
 # - PROCESS_finish
 #
-# An exit code of every process handler, except "PROCESS_finish", is able to
-# break the entire process. The "finish" can fail but it won't be considered
-# as a failure of an execution.
+# Important notes:
+# - An exit code of every process handler, except "PROCESS_finish", is able
+#   to break the entire process (not immediately, after all stages will be
+#   processed). The "finish" can fail but it won't be considered as a failure
+#   of an execution.
 #
-# It is not possible to "fix" the entire process when the previous handler
-# has failed. For instance "PROCESS_post" exited with "23" status code but
-# the "PROCESS_clean" has been successfully completed. The final execution
-# code will remain "23" until the end of the process unless any other handler
-# return another non-zero code.
+# - The "PROCESS_main" will not be executed if "PROCESS_pre" failed. The
+#   pointer will go to "PROCESS_post".
+#
+# - It is not possible to "fix" the entire process when the previous handler
+#   has failed. For instance "PROCESS_post" exited with "23" status code but
+#   the "PROCESS_clean" has been successfully completed. The final execution
+#   code will remain "23" until the end of the process unless any other handler
+#   return another non-zero code.
 
 PROCESS_pre() {
   echo "pre"
