@@ -1,4 +1,4 @@
-# Bash Process Controller
+# Bash Process Controller [![Build Status](https://img.shields.io/travis/BR0kEN-/bash-process-controller/master.svg?style=flat-square)](https://travis-ci.org/BR0kEN-/bash-process-controller)
 
 ## Usage
 
